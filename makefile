@@ -2,7 +2,7 @@ TARGET = terminalGame
 
 RM = rm -f
 
-FILES = main.cpp hello.cpp
+FILES = main.cpp
 
 OBJS = $(FILES:.cpp=.o)
 
