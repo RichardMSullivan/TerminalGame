@@ -2,18 +2,23 @@
 #include <string>
 
 //converts a string to an interger.
-int stringToNum(std::string string)
+int checkInRange(int guess, int MIN, int MAX)
 {
 
-    int len = string.size();
-
-    for(int i=0; i < len; i++)
+    if(MIN<= guess && guess <= MAX)
     {
-        std::cout << string[i];
+        return true;
+    }
+    else
+    {
+    return false;
     }
 
-    std::cout << std::endl;
-
-    return 0;
 }
 
+int strToNum(std::string string)
+{
+        int num = stoi(string);
+
+        return num;
+}
