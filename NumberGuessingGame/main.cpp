@@ -16,7 +16,7 @@ int main()
     while(true)
     {
         int trys = TRYS;
-        int target = 5;
+        int target = randomNum(MIN,MAX);
 
         while (trys)
         {
@@ -45,7 +45,6 @@ int main()
             }while(acceptableInput == false);
 
             std::cout << std::endl;
-            trys --;
 
             if(trys > 0)
             {
@@ -54,20 +53,24 @@ int main()
                     std::cout<<"correct!"<<std::endl;
                     break;
                 }
-                else if(guessNum > target)
+                else if(guessNum > target && trys >1)
                 {
                     std::cout<<"guess a lower number"<< std::endl;
                 }
-                else
+                else if(guessNum < target && trys >1)
                 {
                     std::cout <<"guess a higher number" <<std::endl;
                 }
-                
+                else
+                {
+                    std::cout << "the correct number was " << target << std::endl;
+                }
             }
 
+            trys --;
             std::cout<<"you have "<<trys<<" guesses left!"<<std::endl;
         }
-
+        
         std::cout << " do you want to play again? ";
         std::cin >> guessStr;
 
