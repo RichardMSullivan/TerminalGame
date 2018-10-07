@@ -16,17 +16,10 @@ Player::Player()
     //j1  0,  1,  0,
     //j2  0,  0,  0,
     for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            if(i==j)
-            {
-                this-> moves[i][j] = 1;
-            }
-            else
-            {
-                this -> moves[i][j] = 0;
-            }
-        }
+        for(int j=0;j<3;j++){   
+            this -> moves[i][j] = 0;
 
+        }
     }
 
 }
@@ -54,9 +47,61 @@ void Player::makeMove()
 {
     std::cout<<"make your move, or type help for more instructions -> "<<std::endl;
 
+    std::cin>> move;
+
+    switch(move)
+    {
+        case 'q':
+        this -> moves[0][0] = 1;
+        break;
+        
+        case 'w':
+        this -> moves[0][1] = 1;
+        break;
+        
+        case 'e':
+        this -> moves[0][2] = 1;
+        break;
+        
+        case 'a':
+        this -> moves[1][0] = 1;
+        break;
+        
+        case 's':
+        this -> moves[1][1] = 1;
+        break;
+        
+        case 'd':
+        this -> moves[1][2] = 1;
+        break;
+        
+        case 'z':
+        this -> moves[2][0] = 1;
+        break;
+        
+        case 'x':
+        this -> moves[2][1] = 1;
+        break;
+        
+        case 'c':
+        this -> moves[2][2] = 1;
+        break;
+        
+        default:
+        std::cout<<"use  q,w,e  to make your move" << std::endl;
+        std::cout<<"     a,s,d" << std::endl;
+        std::cout<<"     z,x,c" << std::endl;
+        break;
+
+    }
+
 }
+
 //outputs an array of the players moves
 int* Player::getMove()
 {
     return *(this-> moves);
 }
+
+
+

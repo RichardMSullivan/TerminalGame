@@ -17,7 +17,13 @@ int main()
     //print player's moves in 3x3 matrix
     player.printMoves();
 
-   int*  memAddress = player.getMove();
+    for(int i=0;i<9;i++)
+    {
+        player.makeMove();
+        player.printMoves();
+    }
+
+    int*  memAddress = player.getMove();
 
     std::cout<< memAddress <<std::endl;
     std::cout<< *memAddress <<std::endl;

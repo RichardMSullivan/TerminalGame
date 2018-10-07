@@ -9,6 +9,7 @@ class Player
     
     std::string name;
     int moves[3][3];
+    char move;
     
     public:
 
