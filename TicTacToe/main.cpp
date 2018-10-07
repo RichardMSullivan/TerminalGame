@@ -4,15 +4,18 @@
 
 int main()
 {   
-    //show instructions
-    showInstructions();
+    //initialize board
+    Board board;
     //create player object
     Player player;
+    //show instructions
+    board.showInstructions();
+
     //display player name
     player.displayName();
     
     //show board state
-    displayBoard();
+    board.displayBoard();
     
     //print player's moves in 3x3 matrix
     player.printMoves();

@@ -1,8 +1,26 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-void showInstructions();
+class Board
+{
+    private:
+    //variables
+    int boardState[3][3];
+    int moveCounter;
 
-void displayBoard();
+    public:
+    //init method
+    Board();
 
+    //message methods
+    void showInstructions();
+
+    //counter methods
+    void incramentCounter();
+
+    //board methods
+    void displayBoard();
+    void updateBoard();
+
+};
 #endif

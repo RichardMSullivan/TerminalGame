@@ -43,6 +43,7 @@ void Player::printMoves()
 }
 
 //asks the player to make their move
+//then stores the move they made in moves
 void Player::makeMove()
 {
     std::cout<<"make your move, or type help for more instructions -> "<<std::endl;

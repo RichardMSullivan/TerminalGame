@@ -1,6 +1,18 @@
 #include <iostream>
+#include "board.h"
 
-void showInstructions()
+
+Board::Board()
+{
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+           this -> boardState[i][j] = 0;
+        }
+    }
+    this -> moveCounter = 0;
+}
+
+void Board::showInstructions()
 {
     std::cout<< "welcome to tic-tac-toe!"<<std::endl;
     std::cout<< "use the  { q, w, e }  keys to input your move" << std::endl;
@@ -8,7 +20,18 @@ void showInstructions()
     std::cout<< "         { z, x, c }                         " << std::endl;
 }
 
-void displayBoard()
+void Board::incramentCounter()
+{
+    (this -> moveCounter)++;
+
+}
+
+void Board::displayBoard()
 {
     std::cout<<"board"<<std::endl;
+}
+
+void Board::updateBoard()
+{
+    std::cout<<"board updated"<<std::endl;
 }
