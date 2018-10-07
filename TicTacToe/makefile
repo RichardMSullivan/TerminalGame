@@ -2,7 +2,7 @@ TARGET = ticTacToe
 
 RM = rm -f
 
-FILES = main.cpp player.cpp
+FILES = main.cpp player.cpp board.cpp
 
 OBJS = $(FILES:.cpp=.o)
 

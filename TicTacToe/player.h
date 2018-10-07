@@ -6,14 +6,17 @@
 class Player
 {
     private:
-
+    
     std::string name;
     int moves[3][3];
-
+    
     public:
 
     Player();
     void displayName();
+    void printMoves();
+    void makeMove();
+    int* getMove();
 };
 
 #endif
