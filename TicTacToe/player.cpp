@@ -44,48 +44,59 @@ void Player::printMoves()
 
 //asks the player to make their move
 //then stores the move they made in moves
-void Player::makeMove()
+void Player::makeMove(int turnNum)
 {
     std::cout<<"make your move, or type help for more instructions -> "<<std::endl;
 
     std::cin>> move;
+    
+    int XorO = turnNum % 2;
+    
 
+    if(XorO == 0)
+    {
+        XorO = 1;
+    }
+    else
+    {
+        XorO = -1;
+    }
     switch(move)
     {
         case 'q':
-        this -> moves[0][0] = 1;
+        this -> moves[0][0] = XorO;
         break;
         
         case 'w':
-        this -> moves[0][1] = 1;
+        this -> moves[0][1] = XorO;
         break;
         
         case 'e':
-        this -> moves[0][2] = 1;
+        this -> moves[0][2] = XorO;
         break;
         
         case 'a':
-        this -> moves[1][0] = 1;
+        this -> moves[1][0] = XorO;
         break;
         
         case 's':
-        this -> moves[1][1] = 1;
+        this -> moves[1][1] = XorO;
         break;
         
         case 'd':
-        this -> moves[1][2] = 1;
+        this -> moves[1][2] = XorO;
         break;
         
         case 'z':
-        this -> moves[2][0] = 1;
+        this -> moves[2][0] = XorO;
         break;
         
         case 'x':
-        this -> moves[2][1] = 1;
+        this -> moves[2][1] = XorO;
         break;
         
         case 'c':
-        this -> moves[2][2] = 1;
+        this -> moves[2][2] = XorO;
         break;
         
         default:

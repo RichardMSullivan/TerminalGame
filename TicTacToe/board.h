@@ -14,13 +14,15 @@ class Board
 
     //message methods
     void showInstructions();
-
+    void showCounter();
+    void showWinner(int winner);
     //counter methods
     void incramentCounter();
+    int getCounter();
 
     //board methods
     void displayBoard();
     void updateBoard(int* array);
-
+    int checkBoardState();
 };
 #endif

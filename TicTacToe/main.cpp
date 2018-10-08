@@ -4,8 +4,10 @@
 
 int main()
 {   
-    //initialize board
+    //initialize board &
+    //create board object
     Board board;
+    //initialize player &
     //create player object
     Player player;
 
@@ -18,13 +20,24 @@ int main()
     //print player's moves in 3x3 matrix
     player.printMoves();
 
-    for(int i=0;i<9;i++)
+    //player makes a move
+    //board looks at player moves and updates all moves on board
+    //displays the board
+    bool playing = true;
+    while(playing)
     {
-        player.makeMove();
+        
+        player.makeMove(board.getCounter());
         board.updateBoard(player.getMove());
         board.displayBoard();
+        board.showCounter();
+        if(board.checkBoardState() < 2)
+        {
+            playing = false;
+        }
+        board.incramentCounter();
     }
-
+    board.showWinner(board.checkBoardState());
 
     return 0;
 }
