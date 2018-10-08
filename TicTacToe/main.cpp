@@ -8,12 +8,10 @@ int main()
     Board board;
     //create player object
     Player player;
+
     //show instructions
     board.showInstructions();
 
-    //display player name
-    player.displayName();
-    
     //show board state
     board.displayBoard();
     
@@ -23,13 +21,10 @@ int main()
     for(int i=0;i<9;i++)
     {
         player.makeMove();
-        player.printMoves();
+        board.updateBoard(player.getMove());
+        board.displayBoard();
     }
 
-    int*  memAddress = player.getMove();
-
-    std::cout<< memAddress <<std::endl;
-    std::cout<< *memAddress <<std::endl;
 
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 #include "board.h"
 
 
@@ -28,10 +29,27 @@ void Board::incramentCounter()
 
 void Board::displayBoard()
 {
-    std::cout<<"board"<<std::endl;
+    std::cout<< "   |   |   " <<std::endl;
+    std::cout<<" "<<boardState[0][0] <<" | "<<boardState[0][1]<<" | "<<boardState[0][2]<<std::endl;
+    std::cout<< "---+---+---" <<std::endl;
+    std::cout<<" "<<boardState[1][0] <<" | "<<boardState[1][1]<<" | "<<boardState[1][2]<<std::endl;
+    std::cout<< "---+---+---" <<std::endl;
+    std::cout<<" "<<boardState[2][0] <<" | "<<boardState[2][1]<<" | "<<boardState[2][2]<<std::endl;
+    std::cout<< "   |   |  " <<std::endl;
 }
 
-void Board::updateBoard()
+void Board::updateBoard(int* array)
 {
-    std::cout<<"board updated"<<std::endl;
+    for(int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            if (*((array) + (j + 3*i)) == 1)
+            {
+               this -> boardState[i][j] = 1;
+            }
+
+        }
+    }
+
 }
+
+

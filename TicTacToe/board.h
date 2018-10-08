@@ -20,7 +20,7 @@ class Board
 
     //board methods
     void displayBoard();
-    void updateBoard();
+    void updateBoard(int* array);
 
 };
 #endif
